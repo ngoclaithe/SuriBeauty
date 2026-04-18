@@ -128,15 +128,13 @@ export default function HomePage() {
             <div className="relative flex items-center justify-center">
               {/* Decorative gradient blob behind */}
               <div className="absolute inset-0 bg-gradient-to-br from-rose-100/60 via-pink-50/40 to-amber-50/30 rounded-[3rem] blur-2xl scale-90" />
-              <div className="relative z-10">
-                <Image
-                  src="/hero-products.png"
-                  alt="SURI K-Beauty Products"
-                  width={600}
-                  height={600}
-                  className="object-contain drop-shadow-2xl"
-                  priority
-                />
+              <div className="relative z-10 w-full h-[500px]">
+                <div className="absolute top-0 right-[15%] w-[260px] md:w-[300px] h-[360px] md:h-[400px] rotate-6 hover:rotate-2 transition-transform duration-500 animate-float" style={{ animationDelay: '0s' }}>
+                  <Image src="/hero_soft_kbeauty_2.png" alt="SURI Model" fill sizes="(max-width: 768px) 260px, 300px" className="object-cover rounded-3xl shadow-xl border-4 border-white/80" priority />
+                </div>
+                <div className="absolute bottom-[-20px] md:bottom-0 left-[5%] w-[280px] md:w-[340px] h-[380px] md:h-[440px] -rotate-3 hover:rotate-0 transition-transform duration-500 animate-float" style={{ animationDelay: '1.5s', zIndex: 11 }}>
+                  <Image src="/hero_soft_kbeauty_1.png" alt="SURI Product" fill sizes="(max-width: 768px) 280px, 340px" className="object-cover rounded-3xl shadow-2xl border-4 border-white/80" priority />
+                </div>
               </div>
               {/* Floating badges */}
               <div className="absolute top-8 right-4 bg-white rounded-2xl shadow-xl p-4 animate-float z-20">
