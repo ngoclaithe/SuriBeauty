@@ -11,7 +11,7 @@ async function bootstrap() {
   // CORS
   const corsOrigins = process.env.CORS_ORIGINS
     ? process.env.CORS_ORIGINS.split(',').map((o) => o.trim())
-    : ['http://localhost:3000'];
+    : ['http://localhost:3000', 'https://suri-beauty.vercel.app', 'https://suribeauty.bscxau.link'];
   app.enableCors({
     origin: corsOrigins,
     credentials: true,
