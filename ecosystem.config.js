@@ -8,15 +8,6 @@ module.exports = {
             env: {
                 NODE_ENV: "production",
             },
-        },
-        {
-            name: "suribeauty-frontend",
-            script: "npm",
-            args: "start",
-            cwd: "./frontend",
-            env: {
-                NODE_ENV: "production",
-            },
         }
     ]
 };
