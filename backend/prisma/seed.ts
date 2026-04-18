@@ -9,9 +9,9 @@ async function main() {
   // Create admin user
   const adminPassword = await bcrypt.hash('admin123', 10);
   const admin = await prisma.user.upsert({
-    where: { email: 'admin@luxe.vn' },
+    where: { email: 'admin@suri.vn' },
     update: {},
-    create: { email: 'admin@luxe.vn', password: adminPassword, name: 'Admin', role: 'ADMIN' },
+    create: { email: 'admin@suri.vn', password: adminPassword, name: 'Admin', role: 'ADMIN' },
   });
   console.log('✅ Admin user created:', admin.email);
 
@@ -178,7 +178,7 @@ async function main() {
     for (const variant of variants) {
       await prisma.productVariant.create({
         data: { ...variant, productId: product.id },
-      }).catch(() => {/* variant may already exist */});
+      }).catch(() => {/* variant may already exist */ });
     }
   }
   console.log('✅ Products created:', products.length);
@@ -237,9 +237,9 @@ async function main() {
     create: { code: 'WELCOME10', discountType: 'PERCENTAGE', discountValue: 10, minOrderValue: 500000, maxDiscount: 200000, usageLimit: 100, expiredAt: new Date('2026-12-31') },
   });
   await prisma.voucher.upsert({
-    where: { code: 'LUXE50K' },
+    where: { code: 'SURI50K' },
     update: {},
-    create: { code: 'LUXE50K', discountType: 'FIXED', discountValue: 50000, minOrderValue: 300000, usageLimit: 200, expiredAt: new Date('2026-06-30') },
+    create: { code: 'SURI50K', discountType: 'FIXED', discountValue: 50000, minOrderValue: 300000, usageLimit: 200, expiredAt: new Date('2026-06-30') },
   });
   console.log('✅ Vouchers created');
 
